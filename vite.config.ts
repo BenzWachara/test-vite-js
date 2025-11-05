@@ -26,4 +26,7 @@ export default defineConfig({
     port: 3000,
   },
   base: "/test-vite-js",
+  build: {
+    outDir: "./docs",
+  },
 });
