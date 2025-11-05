@@ -27,6 +27,6 @@ export default defineConfig({
   },
   base: "/test-vite-js",
   build: {
-    outDir: "./docs",
+    outDir: "./dist",
   },
 });
