@@ -1,0 +1,29 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [
+    react({
+      babel: {
+        plugins: [["babel-plugin-react-compiler"]],
+      },
+    }),
+  ],
+  resolve: {
+    alias: {
+      "@pages": path.resolve(__dirname, "src/pages"),
+      "@components": path.resolve(__dirname, "src/components"),
+    },
+  },
+  server: {
+    open: true,
+    port: 3000,
+  },
+  base: "/test-vite-js",
+});
